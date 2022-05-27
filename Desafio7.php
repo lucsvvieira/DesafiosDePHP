@@ -8,19 +8,24 @@
 
     <?php
 
-        $a = 50;
-        $b = 20;
+        $a = 10;
+        $b = 10;
 
         if(empty($a)) {
             echo "Digite o primeiro valor";
         } else if(empty($b)) {
             echo "Digite o segundo valor";
-        } else if($a > $b) {
-            echo "A maior que B";
-        } else {
+        } else if (!is_numeric($a)){
+            echo "Valor 'a' precisa ser numérico!";
+        } else if(!is_numeric($b)) {
+            echo "Valor 'b' precisa ser numérico!";
+        } else if($a == $b) {
+            echo "A igual a B"; 
+        } else if($a < $b){
             echo "A menor que B";
+        } else {
+            echo "A maior que B";
         }
-        
 
     ?>
 </html>

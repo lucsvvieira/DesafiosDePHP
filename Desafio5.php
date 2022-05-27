@@ -18,7 +18,9 @@
 
     if (isset($_GET['number'])) {
         $numeroDigitado = $_GET['number'];
-        if ($numeroDigitado % 2 == 0) {
+        if(!is_numeric($numeroDigitado)) {
+            echo "O número digitado precisa ser númerico!";
+        } else if ($numeroDigitado % 2 == 0) {
             echo "$numeroDigitado é par";
         } else {
             echo "$numeroDigitado é impar";

@@ -2,17 +2,28 @@
 
 <?php
 
-    $numeroSolicitado = "";
-    $calculoFatorial = "";
+$numeroSolicitado = 4;
+$calculoFatorial = 5;
 
-    if(empty($numeroSolicitado || $calculoFatorial)) {
-        echo "Por favor, digite um número";
-    }
+if (empty($numeroSolicitado)) {
+    echo "Por favor, digite o número solicitado";
+    exit();
+} else if (empty($calculoFatorial)) {
+    echo "Por favor, digite o calculo fatorial";
+    exit();
+} else if(!is_numeric($numeroSolicitado)) {
+    echo "O valor número solicitado precisa ser numérico!";
+    exit();
+} else if(!is_numeric($calculoFatorial)) {
+    echo "O valor cálculo fatorial precisa ser numérico!";
+    exit();
+}
 
-    while($numeroSolicitado > 1) {
+    while ($numeroSolicitado > 1) {
         $calculoFatorial *= $numeroSolicitado;
         $numeroSolicitado--;
     }
 
-    echo $calculoFatorial;
+
+echo $calculoFatorial;
 ?>

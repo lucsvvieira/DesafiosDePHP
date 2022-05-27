@@ -26,11 +26,20 @@
                $numero2 = $_POST['num2'];
                $operacao = $_POST['operacao'];
                $resultado = 0;
-               if(empty ($numero1) || empty ($numero2)) {
-                    echo "Por favor, digite um número.";
+
+               if(empty ($numero1)) {
+                    echo "Por favor, digite o primeiro número";
                     exit();
-               }
-               if($operacao == '+') {
+               } else if (empty ($numero2)) {
+                    echo "Por favor, digite o segundo número";
+                    exit();
+               } else if(!is_numeric($numero1)) {
+                    echo "Valor 1 precisa ser numérico!";
+                    exit();
+               } else if(!is_numeric($numero2)) {
+                    echo "Valor 2 precisa ser numérico!";
+                    exit();
+               } else if ($operacao == '+') {
                     $resultado = $numero1 + $numero2;
                } else if ($operacao == '-') {
                     $resultado = $numero1 - $numero2;
