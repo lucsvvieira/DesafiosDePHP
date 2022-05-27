@@ -2,33 +2,38 @@
 
 <html>
 
-    <head>
-        <title>Desafio 9</title>
-        <meta charset="UTF-8">
-    </head>
+<head>
+    <title>Desafio 9</title>
+    <meta charset="UTF-8">
+</head>
 
-    <body>
-        <form action="" method="GET">
-            Qual seu nome? <input type="text" name="name"></br></br>
-            Qual sua idade? <input type="text" name="age"></br></br>
-            <input type="submit" value="Enviar">
-        </form>
+<body>
+    <form action="" method="GET">
+        Qual seu nome? <input type="text" name="name"></br></br>
+        Qual sua idade? <input type="text" name="age"></br></br>
+        <input type="submit" value="Enviar">
+    </form>
 
-        <?php 
-        
-            $nomeUsuario = $_GET['name'];
-            $idadeUsuario = $_GET['age'];
+    <?php
 
-            if(empty($nomeUsuario)) {
-                echo "Por favor, digite um nome";
-            } else if (empty($idadeUsuario)) {
-                echo "Por favor, digite uma idade";
-            } else if($idadeUsuario > 18) {
-                echo "$nomeUsuario é maior de 18 anos e tem $idadeUsuario anos.";
-            } else {
-                echo "$nomeUsuario não é maior de 18 e tem $idadeUsuario anos.";
-            }
+    $nomeUsuario = $_GET['name'];
+    $idadeUsuario = $_GET['age'];
 
-        ?>
-    </body>
+    if (empty($nomeUsuario)) {
+        echo "Por favor, digite um nome válido";
+    } else if (empty($idadeUsuario)) {
+        echo "Por favor, digite uma idade válida";
+    } else if (!is_string($nomeUsuario)) {
+        echo "Nome de usuário incorreto, digite apenas letras!";
+    } else if (!is_numeric($idadeUsuario)) {
+        echo "Idade incorreta, digite apenas números!";
+    } else if ($idadeUsuario > 18) {
+        echo "$nomeUsuario é maior de 18 anos e tem $idadeUsuario anos.";
+    } else {
+        echo "$nomeUsuario não é maior de 18 e tem $idadeUsuario anos.";
+    }
+
+    ?>
+</body>
+
 </html>
