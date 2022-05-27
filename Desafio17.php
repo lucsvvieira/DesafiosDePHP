@@ -12,11 +12,25 @@
         <?php
 
             $altura = 1.70;
-            $peso = 80;
+            $peso = 21;
+
+            if(empty($altura)) {
+                echo "Por favor, digite a altura!";
+            } else if(empty($peso)) {
+                echo "Por favor, digite o peso!";
+            } else if(!is_numeric($altura)) {
+                echo "Altura inválida, digite a altura válida! (Ex: 1,70)";
+            } else if(!is_numeric($peso)) {
+                echo "Peso inválido, digite um peso válido! (Ex: 80)";
+            } else {
+
             $calculoIMC = round($peso / ($altura * $altura), 2);
+
+
 
             echo "Seu IMC é $calculoIMC";
 
+            }
         ?>
 
     </body>
