@@ -10,7 +10,10 @@
     <body>
         
         <?php
-            
+            $velocidade = 14;
+            $metrosPorSegundo = $velocidade / 3.6;
+            $kmPorHora = $metrosPorSegundo * 3.6;
+            echo "A velocidade convertida é de $velocidade Km por hora.";
         ?>
 
     </body>
